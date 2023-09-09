@@ -129,7 +129,7 @@ class DialPainter extends CustomPainter {
         text: '$secondaryUnits$baseUnits',
         style: Theme.of(context)
             .textTheme
-            .headline2!
+            .displayMedium!
             .copyWith(fontSize: size.shortestSide * 0.15),
       ),
       textDirection: TextDirection.ltr,
@@ -144,7 +144,7 @@ class DialPainter extends CustomPainter {
       textAlign: TextAlign.center,
       text: TextSpan(
         text: getBaseUnitString(), //th: ${theta}',
-        style: Theme.of(context).textTheme.bodyText2,
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
       textDirection: TextDirection.ltr,
     )..layout();
@@ -719,7 +719,8 @@ class DurationPickerDialogState extends State<DurationPickerDialog> {
 
     final Widget actions = ButtonBarTheme(
       data: ButtonBarTheme.of(context),
-      child: ButtonBar(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           TextButton(
             onPressed: _handleCancel,
